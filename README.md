@@ -1,2 +1,0 @@
-# azulyou.github.io
-yjshwedding 
