@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>전승훈 · 심유진 결혼식에 초대합니다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F5F1E6;
+    --card: #FFFFFF;
+    --lav-pale: #EDE8D8;
+    --lav-mid: #9B9484;
+    --lav-deep: #2B2A25;
+    --plum: #201F1B;
+    --plum-soft: #55524A;
+    --blush: #E7E2D2;
+    --line: #E2DCC8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--plum);
+    font-family: 'Noto Serif KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display:flex;
+    justify-content:center;
+  }
+  .frame{
+    width:100%;
+    max-width:480px;
+    min-height:100vh;
+    background: var(--card);
+    box-shadow: 0 0 60px rgba(43,42,37,0.12);
+    position:relative;
+    overflow:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding: 64px 0 0;
+    text-align:center;
+    background: var(--card);
+    overflow:hidden;
+  }
+  .hero-nameline{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    padding: 0 14px;
+  }
+  .hero-name{
+    font-family:'Noto Serif KR', serif;
+    font-weight:400;
+    font-size:15px;
+    letter-spacing:0.32em;
+    color: var(--plum);
+  }
+  .hero-fraction{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    line-height:1;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+    color: var(--plum);
+  }
+  .hero-fraction .num{
+    font-size:30px;
+    padding: 0 2px;
+  }
+  .hero-fraction .frac-rule{
+    width:34px;
+    height:1px;
+    background: var(--plum);
+    margin: 3px 0;
+  }
+  .hero-photo{
+    position:relative;
+    width:100%;
+    aspect-ratio: 16 / 9;
+    margin-top:56px;
+    background: linear-gradient(150deg, var(--lav-pale), var(--card));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .hero-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .hero-photo .placeholder-label{
+    font-family:'Noto Serif KR', serif;
+    font-size:13px;
+    letter-spacing:0.1em;
+    color: var(--plum-soft);
+    opacity:0.6;
+  }
+  .hero-bottom{
+    padding: 34px 24px 54px;
+  }
+  .hero-bottom p{
+    font-family:'Noto Serif KR', serif;
+    font-weight:300;
+    font-size:13.5px;
+    letter-spacing:0.02em;
+    color: var(--plum);
+    line-height:2;
+  }
+  .corner-flourish{
+    position:absolute;
+    width:26px; height:26px;
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .corner-flourish.tl{ top:22px; left:22px; }
+  .corner-flourish.tr{ top:22px; right:22px; transform:scaleX(-1); }
+
+  .arch-svg{
+    position:absolute;
+    top:0; left:50%;
+    transform: translateX(-50%);
+    width:340px;
+    max-width:90%;
+    height:auto;
+    opacity:0.9;
+    pointer-events:none;
+  }
+  .petal{
+    position:absolute;
+    top:-10px;
+    opacity:0;
+    border-radius:50%;
+    animation: fall linear infinite;
+    pointer-events:none;
+  }
+  @keyframes fall{
+    0%{ transform: translateY(0); opacity:0; }
+    10%{ opacity:0.9; }
+    90%{ opacity:0.9; }
+    100%{ transform: translateY(640px); opacity:0; }
+  }
+  .eyebrow{
+    position:relative;
+    font-family:'Noto Serif KR', serif;
+    font-style:italic;
+    font-size:15px;
+    letter-spacing:0.28em;
+    color: var(--lav-deep);
+    text-transform:uppercase;
+    margin-top:64px;
+  }
+  .hero-title{
+    position:relative;
+    font-family:'Noto Serif KR', serif;
+    font-weight:300;
+    font-size:15px;
+    letter-spacing:0.05em;
+    color: var(--plum-soft);
+    margin-top:18px;
+  }
+  .names{
+    position:relative;
+    margin-top:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+  }
+  .names .name{
+    font-family:'Noto Serif KR', serif;
+    font-weight:600;
+    font-size:34px;
+    color: var(--plum);
+    line-height:1.2;
+  }
+  .names .amp{
+    font-family:'Noto Serif KR', serif;
+    font-style:italic;
+    font-size:20px;
+    color: var(--lav-mid);
+  }
+  .hero-date{
+    position:relative;
+    margin-top:26px;
+    font-family:'Noto Serif KR', serif;
+    font-size:19px;
+    letter-spacing:0.12em;
+    color: var(--lav-deep);
+  }
+  .hero-venue{
+    position:relative;
+    margin-top:8px;
+    font-size:13px;
+    letter-spacing:0.04em;
+    color: var(--plum-soft);
+    font-weight:300;
+  }
+  .scroll-cue{
+    position:relative;
+    margin-top:46px;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color: var(--lav-mid);
+    text-transform:uppercase;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{
+    padding: 58px 30px;
+    text-align:center;
+    border-top: 1px solid var(--line);
+  }
+  .section-eyebrow{
+    font-family:'Noto Serif KR', serif;
+    font-style:italic;
+    font-size:13px;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:var(--lav-deep);
+    margin-bottom:10px;
+  }
+  .section-title{
+    font-family:'Noto Serif KR', serif;
+    font-weight:500;
+    font-size:21px;
+    margin-bottom:26px;
+    color:var(--plum);
+  }
+
+  /* ---------- MESSAGE ---------- */
+  .message p{
+    font-size:15px;
+    line-height:2.05;
+    font-weight:300;
+    color: var(--plum-soft);
+  }
+  .monogram{
+    width:52px; height:52px;
+    margin: 30px auto 0;
+    border-radius:50%;
+    border:1px solid var(--lav-deep);
+    box-shadow: 0 0 0 4px var(--card), 0 0 0 5px var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Serif KR', serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--lav-deep);
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- D-DAY / CALENDAR ---------- */
+  .dday-badge{
+    display:inline-block;
+    padding:10px 26px;
+    border-radius:999px;
+    background: linear-gradient(135deg, var(--lav-pale), var(--blush));
+    color:var(--plum);
+    font-family:'Noto Serif KR', serif;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:0.03em;
+    margin-bottom:32px;
+  }
+  .dday-badge b{ color:var(--lav-deep); font-size:16px; }
+
+  .cal{
+    background: var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:24px 18px 18px;
+  }
+  .cal-head{
+    font-family:'Noto Serif KR', serif;
+    font-size:18px;
+    letter-spacing:0.08em;
+    color:var(--plum);
+    margin-bottom:16px;
+  }
+  .cal-grid{
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap:12px;
+    font-size:12px;
+  }
+  .cal-grid .dow{
+    color: var(--lav-deep);
+    font-weight:500;
+    padding-bottom:6px;
+  }
+  .cal-grid .day{
+    color: var(--plum-soft);
+    font-weight:300;
+  }
+  .cal-grid .day.blank{ visibility:hidden; }
+  .cal-grid .day.today{
+    position:relative;
+    color:#fff;
+    font-weight:600;
+  }
+  .cal-grid .day.today span{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:26px; height:26px;
+    border-radius:50%;
+    background: var(--lav-deep);
+  }
+  .cal-grid .sat{ color:#3A382F; }
+  .cal-grid .sun{ color:#B5AA8F; }
+
+  /* ---------- DETAIL CARD ---------- */
+  .detail-card{
+    background: var(--lav-pale);
+    border-radius:18px;
+    padding:30px 24px;
+    text-align:left;
+  }
+  .detail-row{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:14px 0;
+  }
+  .detail-row + .detail-row{
+    border-top: 1px solid rgba(43,42,37,0.15);
+  }
+  .detail-icon{
+    flex-shrink:0;
+    width:34px; height:34px;
+    border-radius:50%;
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .detail-icon svg{ width:16px; height:16px; }
+  .detail-label{
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--lav-deep);
+    text-transform:uppercase;
+    margin-bottom:4px;
+  }
+  .detail-value{
+    font-size:14.5px;
+    color:var(--plum);
+    font-weight:400;
+    line-height:1.55;
+  }
+.detail-photo{
+    position:relative;
+    aspect-ratio: 1402/ 1122;
+    overflow:hidden;
+    cursor:pointer;
+  }
+  .map-btn{
+    display:block;
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    text-align:center;
+    background: var(--lav-deep);
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:13.5px;
+    letter-spacing:0.04em;
+    font-weight:500;
+    transition: background 0.2s;
+  }
+  .map-btn:active{ background: var(--plum); }
+
+  /* ---------- GALLERY (흑백 → 클릭 시 컬러 → 한번 더 클릭 시 라이트박스) ---------- */
+  .gallery-section{
+    background: var(--lav-deep);
+    padding: 60px 24px 64px;
+  }
+  .gallery-section .section-eyebrow{ color: var(--card); opacity:0.75; }
+  .gallery-section .section-title{ color: var(--card); }
+  .gallery-frame{
+    background: var(--card);
+    padding:10px;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:8px;
+  }
+  .gallery-item{
+    position:relative;
+    aspect-ratio: 3 / 4;
+    overflow:hidden;
+    cursor:pointer;
+  }
+  .gallery-media{
+    position:absolute; inset:0;
+    filter: grayscale(1);
+    transition: filter 0.45s ease;
+  }
+  .gallery-item.is-color .gallery-media{
+    filter: grayscale(0);
+  }
+  .gallery-media img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .gallery-placeholder-fill{
+    position:absolute; inset:0;
+    background: linear-gradient(150deg, var(--lav-pale), var(--blush));
+  }
+  .gallery-placeholder-text{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Serif KR', serif;
+    font-size:12px;
+    letter-spacing:0.04em;
+    color: var(--plum-soft);
+    opacity:0.55;
+    text-align:center;
+    padding:8px;
+  }
+  .gallery-hint{
+    margin-top:16px;
+    font-size:11.5px;
+    color: var(--card);
+    opacity:0.6;
+    font-weight:300;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- LIGHTBOX (줌 불가) ---------- */
+  .lightbox{
+    position:fixed;
+    inset:0;
+    z-index:80;
+    background: rgba(20,18,15,0.94);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    touch-action:none;
+  }
+  .lightbox.is-open{ display:flex; }
+  .lightbox-media{
+    width:86%;
+    max-width:420px;
+    aspect-ratio: 3/4;
+    position:relative;
+    overflow:hidden;
+    touch-action:none;
+  }
+  .lightbox-media img{
+    width:100%; height:100%;
+    object-fit:contain;
+    pointer-events:none;
+  }
+  .lightbox-close{
+    position:absolute;
+    top:28px; right:24px;
+    width:34px; height:34px;
+    border:1px solid rgba(255,255,255,0.5);
+    border-radius:50%;
+    background:none;
+    color:#fff;
+    font-size:16px;
+    line-height:1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lightbox-nav{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width:40px; height:40px;
+    border:1px solid rgba(255,255,255,0.5);
+    border-radius:50%;
+    background:none;
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lightbox-nav.prev{ left:16px; }
+  .lightbox-nav.next{ right:16px; }
+  .lightbox-counter{
+    position:absolute;
+    bottom:28px;
+    left:50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.75);
+    font-family:'Cormorant Garamond', serif;
+    font-size:13px;
+    letter-spacing:0.1em;
+  }
+  .gallery-note{
+    margin-top:18px;
+    font-size:12.5px;
+    color:var(--plum-soft);
+    font-weight:300;
+    line-height:1.7;
+  }
+
+  /* ---------- ACCOUNT ACCORDION ---------- */
+  .accordion{
+    background: var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    text-align:left;
+  }
+  .accordion + .accordion{ margin-top:10px; }
+  .acc-head{
+    width:100%;
+    padding:18px 20px;
+    background:none;
+    border:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:'Noto Serif KR', sans-serif;
+    font-size:14px;
+    font-weight:500;
+    color:var(--plum);
+    cursor:pointer;
+  }
+  .acc-head .chev{
+    transition: transform 0.25s ease;
+    color: var(--lav-deep);
+  }
+  .acc-head[aria-expanded="true"] .chev{ transform: rotate(180deg); }
+  .acc-body{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height 0.3s ease;
+  }
+  .acc-body-inner{
+    padding: 0 20px 18px;
+    font-size:13px;
+    color: var(--plum-soft);
+    font-weight:300;
+    line-height:1.9;
+  }
+  .acc-note{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 12px;
+    background: var(--lav-pale);
+    border-radius:8px;
+    font-size:11.5px;
+    color: var(--lav-deep);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding: 54px 30px 70px;
+    text-align:center;
+    background: linear-gradient(180deg, var(--card), var(--lav-pale));
+  }
+  footer .fmsg{
+    font-family:'Noto Serif KR', serif;
+    font-style:italic;
+    font-size:16px;
+    color: var(--lav-deep);
+    line-height:1.7;
+  }
+  footer .fnames{
+    margin-top:16px;
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    color:var(--plum);
+    letter-spacing:0.04em;
+  }
+  footer .fyear{
+    margin-top:22px;
+    font-size:11px;
+    letter-spacing:0.2em;
+    color: var(--lav-mid);
+  }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal{
+    opacity:0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+<div class="frame" id="frame">
+
+<!-- HERO -->
+  <div class="hero" id="hero">
+    <div class="hero-nameline">
+      <span class="hero-name">전 승 훈</span>
+      <div class="hero-fraction">
+        <span class="num">01</span>
+        <span class="frac-rule"></span>
+        <span class="num">30</span>
+      </div>
+      <span class="hero-name">심 유 진</span>
+    </div>
+    <div class="hero-photo">
+       <img src="https://lh3.googleusercontent.com/d/1d5DylpPmC5-w95azOtvZGwAfh3JrWzEy" alt="전승훈 · 심유진">
+    </div>
+    <div class="hero-bottom">
+      <p>2027년 1월 30일 토요일 오후 12시 30분</p>
+      <p>로얄파크컨벤션 · 서울 용산구</p>
+    </div>
+  </div>
+
+  <!-- MESSAGE -->
+  <section class="reveal message">
+    <div class="section-eyebrow">Invitation</div>
+    <div class="section-title">소중한 분들을 초대합니다</div>
+    <p>
+      은은한 겨울 햇살 아래, 오랜 시간 서로를 알아가며<br>
+      함께 걸어온 두 사람이 이제 하나의 이름으로<br>
+      새로운 길을 걸어가려 합니다.<br><br>
+      바쁘시더라도 귀한 걸음 하시어<br>
+      따뜻한 축복으로 저희의 첫날을<br>
+      함께해 주시면 더없는 기쁨이겠습니다.
+    </p>
+    <div class="monogram">J & S</div>
+  </section>
+
+  <!-- CALENDAR / D-DAY -->
+  <section class="reveal">
+    <div class="section-eyebrow">Save The Date</div>
+    <div class="section-title">2027년 1월 30일, 토요일</div>
+    <div class="dday-badge" id="ddayBadge">오늘까지 <b id="ddayNum">-</b>일 남았습니다</div>
+    <div class="cal">
+      <div class="cal-head">JANUARY 2027</div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+  </section>
+
+  <!-- DETAIL -->
+  <section class="reveal">
+    <div class="section-eyebrow">Ceremony</div>
+    <div class="section-title">예식 안내</div>
+    <div class="detail-card">
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2B2A25" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        </div>
+        <div>
+          <div class="detail-label">Date</div>
+          <div class="detail-value">2027년 1월 30일 토요일 낮 12시 30분</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2B2A25" stroke-width="1.6"><path d="M12 22s7-7.4 7-12.5A7 7 0 1 0 5 9.5C5 14.6 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+        </div>
+        <div>
+          <div class="detail-label">Venue</div>
+          <div class="detail-value">로얄파크컨벤션<br>서울 용산구 이태원로 29</div>
+        </div>
+      </div>
+        <div class="detail-photo" data-state="bw">
+          <div class="detail-photo">
+           <img src="https://lh3.googleusercontent.com/d/11PmCXH8k63R014oKDLnJ4aJoxmDOo8Sa" alt="">
+          </div>
+        </div>
+      <a class="map-btn" id="mapLink" href="#" target="_blank" rel="noopener">지도 앱에서 길찾기</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="reveal gallery-section">
+    <div class="section-eyebrow">Gallery</div>
+    <div class="section-title">우리의 장면들</div>
+    <div class="gallery-frame">
+      <div class="gallery-grid" id="galleryGrid">
+
+             <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+       <img src="https://lh3.googleusercontent.com/d/1llfABEgfgOF0lCp_Ebj6P9qAq6o1PKcy" alt="">
+          </div>
+        </div>
+
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+           <img src="https://lh3.googleusercontent.com/d/1zA9AHgyv9Bom43zTsM6P_H2aLGF-Ht1f" alt="">
+          </div>
+        </div>
+
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+           <img src="https://lh3.googleusercontent.com/d/1XVt4XIjeLYywmqT7C7vHirOoJAudS2QL" alt="">
+          </div>
+        </div>
+
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+         <img src="https://lh3.googleusercontent.com/d/1KqaHZKx-CH5Ocjw3tfLEmYjZICtyUyUs" alt="">
+          </div>
+        </div>
+
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+       <img src="https://lh3.googleusercontent.com/d/1SkSC-QYB4I0PRqwT6j2Ydif8ePULm5n_" alt="">
+          </div>
+        </div>
+
+          <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+        <img src="https://lh3.googleusercontent.com/d/1_-B77sadF3PmGKt5Vo0MVXOKSu6AqxB9" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="gallery-hint">한 번 더 누르면 크게 볼 수 있어요</div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <button class="lightbox-nav prev" id="lightboxPrev">‹</button>
+    <div class="lightbox-media" id="lightboxMedia"></div>
+    <button class="lightbox-nav next" id="lightboxNext">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <!-- ACCOUNT -->
+  <section class="reveal">
+    <div class="section-eyebrow">Gift</div>
+    <div class="section-title">마음 전하실 곳</div>
+    <div class="accordion">
+      <button class="acc-head" aria-expanded="false" data-target="acc-groom">
+        <span>신랑측</span>
+        <span class="chev">⌄</span>
+      </button>
+      <div class="acc-body" id="acc-groom">
+        <div class="acc-body-inner">
+          전승훈<br>
+          은행 · 계좌번호를 입력해 주세요
+          <div class="acc-note">핸드폰 번호 </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <button class="acc-head" aria-expanded="false" data-target="acc-bride">
+        <span>신부측</span>
+        <span class="chev">⌄</span>
+      </button>
+      <div class="acc-body" id="acc-bride">
+        <div class="acc-body-inner">
+          심유진<br>
+          은행 · 계좌번호를 입력해 주세요
+          <div class="acc-note">핸드폰 번호 </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="reveal">
+    <div class="fmsg">Thank you for being with us</div>
+    <div class="fnames">전승훈 · 심유진</div>
+    <div class="fyear">2027. 01. 30</div>
+  </footer>
+
+</div>
+
+<script>
+  // ---------- 사진 위에 흩날리는 동그라미 효과 ----------
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce) return;
+    var photo = document.querySelector('.hero-photo');
+    if(!photo) return;
+    var colors = ['rgba(255,255,255,0.85)','rgba(237,232,216,0.8)','rgba(43,42,37,0.35)'];
+    for(var i=0;i<14;i++){
+      var p = document.createElement('div');
+      p.className = 'petal';
+      var size = 5 + Math.random()*7;
+      p.style.left = (4 + Math.random()*92) + '%';
+      p.style.width = size+'px';
+      p.style.height = size+'px';
+      p.style.background = colors[i % colors.length];
+      p.style.animationDuration = (6 + Math.random()*5) + 's';
+      p.style.animationDelay = (Math.random()*6) + 's';
+      photo.appendChild(p);
+    }
+  })();
+
+  // ---------- D-day ----------
+  (function(){
+    var target = new Date('2027-01-30T12:30:00+09:00');
+    var now = new Date();
+    var diff = Math.ceil((target - now) / (1000*60*60*24));
+    var badge = document.getElementById('ddayBadge');
+    var num = document.getElementById('ddayNum');
+    if(diff > 0){
+      num.textContent = diff;
+      badge.innerHTML = '결혼식까지 <b>' + diff + '</b>일 남았습니다';
+    } else if(diff === 0){
+      badge.innerHTML = '<b>오늘</b>, 두 사람이 결혼합니다';
+    } else {
+      badge.innerHTML = '<b>' + Math.abs(diff) + '</b>일 전, 두 사람은 부부가 되었습니다';
+    }
+  })();
+
+  // ---------- Calendar for Jan 2027 (Jan 1 2027 = Friday) ----------
+  (function(){
+    var grid = document.getElementById('calGrid');
+    var dows = ['일','월','화','수','목','금','토'];
+    dows.forEach(function(d, i){
+      var el = document.createElement('div');
+      el.className = 'dow' + (i===0?' sun':'') + (i===6?' sat':'');
+      el.textContent = d;
+      grid.appendChild(el);
+    });
+    var firstDowIndex = 5; // Jan 1, 2027 is Friday -> index 5 (0=Sun)
+    var daysInMonth = 31;
+    var weddingDay = 30;
+    for(var b=0; b<firstDowIndex; b++){
+      var blank = document.createElement('div');
+      blank.className = 'day blank';
+      grid.appendChild(blank);
+    }
+    for(var d=1; d<=daysInMonth; d++){
+      var cell = document.createElement('div');
+      var dowIndex = (firstDowIndex + (d-1)) % 7;
+      cell.className = 'day' + (dowIndex===0?' sun':'') + (dowIndex===6?' sat':'');
+      if(d === weddingDay){
+        cell.className += ' today';
+        cell.innerHTML = '<span>' + d + '</span>';
+      } else {
+        cell.textContent = d;
+      }
+      grid.appendChild(cell);
+    }
+  })();
+
+  // ---------- Gallery: 흑백 → 클릭 시 컬러 → 한번 더 클릭 시 라이트박스 ----------
+  (function(){
+    var items = document.querySelectorAll('.gallery-item');
+    var lightbox = document.getElementById('lightbox');
+    var lightboxMedia = document.getElementById('lightboxMedia');
+    var lightboxClose = document.getElementById('lightboxClose');
+    var lightboxPrev = document.getElementById('lightboxPrev');
+    var lightboxNext = document.getElementById('lightboxNext');
+    var lightboxCounter = document.getElementById('lightboxCounter');
+    var currentIndex = 0;
+
+    items.forEach(function(item, idx){
+      item.addEventListener('click', function(){
+        if(this.dataset.state === 'bw'){
+          this.dataset.state = 'color';
+          this.classList.add('is-color');
+        } else {
+          openLightbox(idx);
+        }
+      });
+    });
+
+    function renderLightbox(){
+      var item = items[currentIndex];
+      lightboxMedia.innerHTML = item.querySelector('.gallery-media').innerHTML;
+      lightboxCounter.textContent = (currentIndex + 1) + ' / ' + items.length;
+    }
+    function openLightbox(idx){
+      currentIndex = idx;
+      renderLightbox();
+      lightbox.classList.add('is-open');
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('is-open');
+      lightboxMedia.innerHTML = '';
+    }
+    function showPrev(){
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      renderLightbox();
+    }
+    function showNext(){
+      currentIndex = (currentIndex + 1) % items.length;
+      renderLightbox();
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', function(e){ e.stopPropagation(); showPrev(); });
+    lightboxNext.addEventListener('click', function(e){ e.stopPropagation(); showNext(); });
+    lightbox.addEventListener('click', function(e){
+      if(e.target === lightbox) closeLightbox();
+    });
+
+    // 좌우 스와이프로도 다음/이전 사진 이동
+    var touchStartX = null;
+    lightbox.addEventListener('touchstart', function(e){
+      touchStartX = e.touches[0].clientX;
+    }, { passive:true });
+    lightbox.addEventListener('touchend', function(e){
+      if(touchStartX === null) return;
+      var diff = e.changedTouches[0].clientX - touchStartX;
+      if(Math.abs(diff) > 40){
+        diff < 0 ? showNext() : showPrev();
+      }
+      touchStartX = null;
+    });
+
+    // 라이트박스 안에서는 핀치/더블탭 줌 동작을 막습니다.
+    lightbox.addEventListener('gesturestart', function(e){ e.preventDefault(); });
+    lightbox.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive:false });
+  })();
+
+  // ---------- Map link ----------
+  (function(){
+    var address = '서울 용산구 이태원로 29 로얄파크컨벤션';
+    var link = document.getElementById('mapLink');
+    link.href = 'https://map.naver.com/v5/search/' + encodeURIComponent(address);
+  })();
+
+  // ---------- Accordion ----------
+  document.querySelectorAll('.acc-head').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var body = document.getElementById(btn.getAttribute('data-target'));
+      btn.setAttribute('aria-expanded', String(!expanded));
+      body.style.maxHeight = expanded ? '0px' : body.scrollHeight + 'px';
+    });
+  });
+
+  // ---------- Scroll reveal (드래그/스크롤 시 콘텐츠 나타나는 효과) ----------
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var targets = document.querySelectorAll('.reveal');
+    if(reduce){
+      targets.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
