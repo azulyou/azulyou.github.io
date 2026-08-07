@@ -85,7 +85,7 @@
   .hero-photo{
     position:relative;
     width:100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 5;
     margin-top:56px;
     background: linear-gradient(150deg, var(--lav-pale), var(--card));
     display:flex;
@@ -355,12 +355,6 @@
     font-weight:400;
     line-height:1.55;
   }
-.detail-photo{
-    position:relative;
-    aspect-ratio: 1402/ 1122;
-    overflow:hidden;
-    cursor:pointer;
-  }
   .map-btn{
     display:block;
     margin-top:20px;
@@ -611,7 +605,9 @@
       <span class="hero-name">심 유 진</span>
     </div>
     <div class="hero-photo">
-       <img src="https://lh3.googleusercontent.com/d/1d5DylpPmC5-w95azOtvZGwAfh3JrWzEy" alt="전승훈 · 심유진">
+      <!-- TODO: 실제 사진(main-photo.jpg 등)으로 교체하고 아래 placeholder-label div는 지워주세요 -->
+      <span class="placeholder-label">사진을 넣어주세요</span>
+      <!-- <img src="main-photo.jpg" alt="전승훈 · 심유진"> -->
     </div>
     <div class="hero-bottom">
       <p>2027년 1월 30일 토요일 오후 12시 30분</p>
@@ -668,11 +664,6 @@
           <div class="detail-value">로얄파크컨벤션<br>서울 용산구 이태원로 29</div>
         </div>
       </div>
-        <div class="detail-photo" data-state="bw">
-          <div class="detail-photo">
-           <img src="https://lh3.googleusercontent.com/d/11PmCXH8k63R014oKDLnJ4aJoxmDOo8Sa" alt="">
-          </div>
-        </div>
       <a class="map-btn" id="mapLink" href="#" target="_blank" rel="noopener">지도 앱에서 길찾기</a>
     </div>
   </section>
@@ -684,45 +675,58 @@
     <div class="gallery-frame">
       <div class="gallery-grid" id="galleryGrid">
 
-             <div class="gallery-item" data-state="bw">
-          <div class="gallery-media">
-       <img src="https://lh3.googleusercontent.com/d/1llfABEgfgOF0lCp_Ebj6P9qAq6o1PKcy" alt="">
-          </div>
-        </div>
-
+        <!-- 사진 1: 아래 gallery-placeholder-fill/text 두 줄을 지우고
+             <img src="gallery/1.jpg" alt=""> 한 줄을 넣어주세요 -->
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-           <img src="https://lh3.googleusercontent.com/d/1zA9AHgyv9Bom43zTsM6P_H2aLGF-Ht1f" alt="">
+            <div class="gallery-placeholder-fill"></div>
+            <span class="gallery-placeholder-text">사진 1</span>
           </div>
         </div>
 
+        <!-- 사진 2: <img src="gallery/2.jpg" alt=""> 로 교체 -->
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-           <img src="https://lh3.googleusercontent.com/d/1XVt4XIjeLYywmqT7C7vHirOoJAudS2QL" alt="">
+            <div class="gallery-placeholder-fill"></div>
+            <span class="gallery-placeholder-text">사진 2</span>
           </div>
         </div>
 
+        <!-- 사진 3: <img src="gallery/3.jpg" alt=""> 로 교체 -->
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-         <img src="https://lh3.googleusercontent.com/d/1KqaHZKx-CH5Ocjw3tfLEmYjZICtyUyUs" alt="">
+            <div class="gallery-placeholder-fill"></div>
+            <span class="gallery-placeholder-text">사진 3</span>
           </div>
         </div>
 
+        <!-- 사진 4: <img src="gallery/4.jpg" alt=""> 로 교체 -->
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-       <img src="https://lh3.googleusercontent.com/d/1SkSC-QYB4I0PRqwT6j2Ydif8ePULm5n_" alt="">
+            <div class="gallery-placeholder-fill"></div>
+            <span class="gallery-placeholder-text">사진 4</span>
           </div>
         </div>
 
-          <div class="gallery-item" data-state="bw">
+        <!-- 사진 5: <img src="gallery/5.jpg" alt=""> 로 교체 -->
+        <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-        <img src="https://lh3.googleusercontent.com/d/1_-B77sadF3PmGKt5Vo0MVXOKSu6AqxB9" alt="">
+            <div class="gallery-placeholder-fill"></div>
+            <span class="gallery-placeholder-text">사진 5</span>
+          </div>
+        </div>
+
+        <!-- 사진 6: <img src="gallery/6.jpg" alt=""> 로 교체 -->
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+            <div class="gallery-placeholder-fill"></div>
+            <span class="gallery-placeholder-text">사진 6</span>
           </div>
         </div>
 
       </div>
     </div>
-    <div class="gallery-hint">한 번 더 누르면 크게 볼 수 있어요</div>
+    <div class="gallery-hint">사진을 눌러 컬러로, 한 번 더 누르면 크게 볼 수 있어요</div>
   </section>
 
   <!-- LIGHTBOX -->
