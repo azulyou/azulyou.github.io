@@ -106,13 +106,6 @@
     object-fit:cover;
     display:block;
   }
-  .hero-photo .placeholder-label{
-    font-family:'Noto Serif KR', serif;
-    font-size:13px;
-    letter-spacing:0.1em;
-    color: var(--plum-soft);
-    opacity:0.6;
-  }
   .hero-bottom{
     padding: 34px 24px 54px;
   }
@@ -124,25 +117,7 @@
     color: var(--plum);
     line-height:2;
   }
-  .corner-flourish{
-    position:absolute;
-    width:26px; height:26px;
-    opacity:0.55;
-    pointer-events:none;
-  }
-  .corner-flourish.tl{ top:22px; left:22px; }
-  .corner-flourish.tr{ top:22px; right:22px; transform:scaleX(-1); }
 
-  .arch-svg{
-    position:absolute;
-    top:0; left:50%;
-    transform: translateX(-50%);
-    width:340px;
-    max-width:90%;
-    height:auto;
-    opacity:0.9;
-    pointer-events:none;
-  }
   .petal{
     position:absolute;
     top:-10px;
@@ -156,70 +131,6 @@
     10%{ opacity:0.9; }
     90%{ opacity:0.9; }
     100%{ transform: translateY(640px); opacity:0; }
-  }
-  .eyebrow{
-    position:relative;
-    font-family:'Noto Serif KR', serif;
-    font-style:italic;
-    font-size:15px;
-    letter-spacing:0.28em;
-    color: var(--lav-deep);
-    text-transform:uppercase;
-    margin-top:64px;
-  }
-  .hero-title{
-    position:relative;
-    font-family:'Noto Serif KR', serif;
-    font-weight:300;
-    font-size:15px;
-    letter-spacing:0.05em;
-    color: var(--plum-soft);
-    margin-top:18px;
-  }
-  .names{
-    position:relative;
-    margin-top:22px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:16px;
-  }
-  .names .name{
-    font-family:'Noto Serif KR', serif;
-    font-weight:600;
-    font-size:34px;
-    color: var(--plum);
-    line-height:1.2;
-  }
-  .names .amp{
-    font-family:'Noto Serif KR', serif;
-    font-style:italic;
-    font-size:20px;
-    color: var(--lav-mid);
-  }
-  .hero-date{
-    position:relative;
-    margin-top:26px;
-    font-family:'Noto Serif KR', serif;
-    font-size:19px;
-    letter-spacing:0.12em;
-    color: var(--lav-deep);
-  }
-  .hero-venue{
-    position:relative;
-    margin-top:8px;
-    font-size:13px;
-    letter-spacing:0.04em;
-    color: var(--plum-soft);
-    font-weight:300;
-  }
-  .scroll-cue{
-    position:relative;
-    margin-top:46px;
-    font-size:11px;
-    letter-spacing:0.3em;
-    color: var(--lav-mid);
-    text-transform:uppercase;
   }
 
   /* ---------- SECTION SHARED ---------- */
@@ -283,11 +194,7 @@
     font-weight:600;
   }
 
-  /* ---------- CASTING (신랑 · 신부 소개, 하트 프레임) ---------- */
-  .casting-section{
-    padding: 8px 24px 56px;
-    text-align:center;
-  }
+  /* ---------- CASTING ---------- */
   .casting-grid{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -335,17 +242,6 @@
     width:100%; height:100%;
     object-fit:cover;
     display:block;
-  }
-  .casting-placeholder{
-    width:100%; height:100%;
-    background: linear-gradient(10deg, var(--plum), var(--plum));
-    display:flex; align-items:center; justify-content:center;
-  }
-  .casting-placeholder span{
-    font-family:'Noto Serif KR', serif;
-    font-size:11.5px;
-    color: var(--plum-soft);
-    opacity:0.55;
   }
   .casting-name{
     margin-top:14px;
@@ -455,24 +351,8 @@
     font-weight:400;
     line-height:1.55;
   }
-  .map-btn{
-    display:block;
-    margin-top:20px;
-    width:100%;
-    padding:14px;
-    text-align:center;
-    background: var(--lav-deep);
-    color:#fff;
-    text-decoration:none;
-    border-radius:12px;
-    font-size:13.5px;
-    letter-spacing:0.04em;
-    font-weight:500;
-    transition: background 0.2s;
-  }
-  .map-btn:active{ background: var(--plum); }
   .map-app-row{
-    margin-top:14px;
+    margin-top:20px;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     gap:8px;
@@ -504,7 +384,7 @@
   .map-app-icon.kakao{ background:#FAE100; color:#3A1D1D; }
   .map-app-icon.tmap{ background:#E9165A; }
 
-  /* ---------- DIRECTIONS (오시는 길, 줄글형) ---------- */
+  /* ---------- DIRECTIONS ---------- */
   .directions-list{
     margin-top:6px;
     text-align:left;
@@ -526,106 +406,13 @@
   }
   .directions-text{
     font-family:'Noto Serif KR', serif;
-    font-weight:10 ;
     font-size:12px;
     color: var(--plum-soft);
-    line-height:2.0 ;
+    line-height:2.0;
     text-align:center;
   }
 
-  /* ---------- RSVP ---------- */
-  .rsvp-form{
-    margin-top:28px;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    text-align:left;
-  }
-  .rsvp-field label{
-    display:block;
-    font-family:'Noto Serif KR', serif;
-    font-size:12px;
-    color:var(--plum-soft);
-    letter-spacing:0.03em;
-    margin-bottom:6px;
-  }
-  .rsvp-field input[type="text"],
-  .rsvp-field input[type="number"]{
-    width:100%;
-    padding:12px 14px;
-    border:1px solid var(--line);
-    border-radius:8px;
-    background:var(--card);
-    font-family:'Noto Serif KR', serif;
-    font-size:14px;
-    color:var(--plum);
-  }
-  .rsvp-toggle{
-    display:flex;
-    gap:8px;
-  }
-  .rsvp-toggle button{
-    flex:1;
-    padding:12px;
-    border:1px solid var(--line);
-    border-radius:8px;
-    background:var(--card);
-    font-family:'Noto Serif KR', serif;
-    font-size:13.5px;
-    color:var(--plum-soft);
-  }
-  .rsvp-toggle button.active{
-    background:var(--lav-deep);
-    color:#fff;
-    border-color:var(--lav-deep);
-  }
-  .rsvp-submit{
-    margin-top:4px;
-    width:100%;
-    padding:14px;
-    background:var(--lav-deep);
-    color:#fff;
-    border:none;
-    border-radius:10px;
-    font-family:'Noto Serif KR', serif;
-    font-size:14px;
-    letter-spacing:0.03em;
-  }
-  .rsvp-submit:active{ background:var(--plum); }
-  .rsvp-success{
-    display:none;
-    margin-top:14px;
-    font-size:12.5px;
-    color:var(--plum-soft);
-    line-height:1.7;
-  }
-  .rsvp-success.show{ display:block; }
-  .map-image{
-    margin-top:20px;
-    width:100%;
-    aspect-ratio: 7 / 6;
-    border-radius:10px;
-    overflow:hidden;
-    position:relative;
-    background: linear-gradient(150deg, var(--lav-pale), var(--card));
-    display:flex; align-items:center; justify-content:center;
-  }
-  .map-image img{
-    width:100%; height:100%;
-    object-fit:cover;
-    display:block;
-  }
-  .map-image .placeholder-label{
-    font-family:'Noto Serif KR', serif;
-    font-size:12.5px;
-    letter-spacing:0.02em;
-    color: var(--plum-soft);
-    opacity:0.55;
-    text-align:center;
-    padding:0 20px;
-  }
-
-  /* ---------- GALLERY (흑백 → 클릭 시 컬러 → 한번 더 클릭 시 라이트박스) ---------- */
+  /* ---------- GALLERY ---------- */
   .gallery-section{
     background: var(--lav-deep);
     padding: 60px 24px 64px;
@@ -655,21 +442,6 @@
     object-fit:cover;
     display:block;
   }
-  .gallery-placeholder-fill{
-    position:absolute; inset:0;
-    background: linear-gradient(150deg, var(--lav-pale), var(--blush));
-  }
-  .gallery-placeholder-text{
-    position:absolute; inset:0;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Noto Serif KR', serif;
-    font-size:12px;
-    letter-spacing:0.04em;
-    color: var(--plum-soft);
-    opacity:0.55;
-    text-align:center;
-    padding:8px;
-  }
   .gallery-hint{
     margin-top:16px;
     font-size:11.5px;
@@ -679,7 +451,7 @@
     letter-spacing:0.02em;
   }
 
-  /* ---------- LIGHTBOX (줌 불가) ---------- */
+  /* ---------- LIGHTBOX ---------- */
   .lightbox{
     position:fixed;
     inset:0;
@@ -741,13 +513,6 @@
     font-size:13px;
     letter-spacing:0.1em;
   }
-  .gallery-note{
-    margin-top:18px;
-    font-size:12.5px;
-    color:var(--plum-soft);
-    font-weight:300;
-    line-height:1.7;
-  }
 
   /* ---------- ACCOUNT ACCORDION ---------- */
   .accordion{
@@ -799,6 +564,37 @@
     color: var(--lav-deep);
   }
 
+  /* ---------- RSVP (구글 폼 링크 버튼) ---------- */
+  .rsvp-section p{
+    font-size:14.5px;
+    line-height:2.0;
+    font-weight:300;
+    color: var(--plum-soft);
+  }
+  .rsvp-btn-wrap{
+    margin-top:24px;
+  }
+  .rsvp-google-btn{
+    display:inline-block;
+    width:100%;
+    max-width:320px;
+    padding:16px 20px;
+    background: var(--lav-deep);
+    color:#FFFFFF;
+    text-decoration:none;
+    border-radius:12px;
+    font-family:'Noto Serif KR', serif;
+    font-size:14px;
+    letter-spacing:0.06em;
+    font-weight:500;
+    box-shadow: 0 4px 14px rgba(43,42,37,0.12);
+    transition: background 0.2s, transform 0.1s;
+  }
+  .rsvp-google-btn:active{
+    background: var(--plum);
+    transform: scale(0.98);
+  }
+
   /* ---------- FOOTER ---------- */
   footer{
     padding: 54px 30px 70px;
@@ -841,7 +637,7 @@
 <body>
 <div class="frame" id="frame">
 
-<!-- HERO -->
+  <!-- HERO -->
   <div class="hero" id="hero">
     <div class="hero-nameline">
       <span class="hero-name">전 승 훈</span>
@@ -853,7 +649,7 @@
       <span class="hero-name">심 유 진</span>
     </div>
     <div class="hero-photo">
-    <img src="https://lh3.googleusercontent.com/d/1d5DylpPmC5-w95azOtvZGwAfh3JrWzEy" alt="전승훈 · 심유진">
+      <img src="https://lh3.googleusercontent.com/d/1d5DylpPmC5-w95azOtvZGwAfh3JrWzEy" alt="전승훈 · 심유진">
     </div>
     <div class="hero-bottom">
       <p>2027년 1월 30일 토요일 오후 12시 30분</p>
@@ -866,10 +662,11 @@
     <div class="section-eyebrow">Invitation</div>
     <div class="section-title">소중한 분들을 초대합니다</div>
     <p>
-      은은한 겨울 햇살 아래, 오랜 시간 서로를 알아가며<br>
-      함께 걸어온 두 사람이 이제 하나의 이름으로<br>
-      새로운 길을 걸어가려 합니다.<br><br>
-      바쁘시더라도 귀한 걸음 하시어<br>
+      승화된 사랑으로 서로의 마음을 닮아가고 <br>
+      훈훈한 미소로 서로의 하루를 채우며 <br>
+      유난히 서로에게 편안한 사람이 된 두 사람이 <br>
+      진심을 담아 평생을 함께하고자 합니다. <br><br>
+      바쁘시더라도 귀한 걸음 하시어 <br>
       따뜻한 축복으로 저희의 첫날을<br>
       함께해 주시면 더없는 기쁨이겠습니다.
     </p>
@@ -885,7 +682,7 @@
         <div class="casting-tape">Groom</div>
         <div class="casting-photo-bg">
           <div class="heart-mask">
-<img src="https://lh3.googleusercontent.com/d/16bhLlA7AlMXXHvVyGDk-qMWX8vMedUCc" alt="신랑">
+            <img src="https://lh3.googleusercontent.com/d/16bhLlA7AlMXXHvVyGDk-qMWX8vMedUCc" alt="신랑">
           </div>
         </div>
         <p class="casting-name"><b>신랑</b>전승훈</p>
@@ -894,7 +691,7 @@
         <div class="casting-tape">Bride</div>
         <div class="casting-photo-bg">
           <div class="heart-mask">
-<img src="https://lh3.googleusercontent.com/d/18lvwvaYGAiBG0wJH4LI0yFghTi_rkzVB">
+            <img src="https://lh3.googleusercontent.com/d/18lvwvaYGAiBG0wJH4LI0yFghTi_rkzVB" alt="신부">
           </div>
         </div>
         <p class="casting-name"><b>신부</b>심유진</p>
@@ -935,7 +732,6 @@
           <div class="detail-label">Venue</div>
           <div class="detail-value">로얄파크컨벤션 로얄홀<br>서울 용산구 이태원로 29</div>
         </div>
-
       </div>
       <div class="map-app-row">
         <a class="map-app-btn" id="naverMapLink" href="#" target="_blank" rel="noopener">
@@ -961,17 +757,16 @@
     <div class="directions-list">
       <div class="directions-item">
         <div class="directions-label">버스 이용시</div>
-        <div class="directions-text">① 마을버스 - 용산03 (전쟁기념관 하차) </div>
-        <div class="directions-text">② 간선버스(전쟁기념관 하차) - 110A, 110B, 421, 740, N72. N75</div>
-        <div class="directions-text">③ 삼각지역 하차 - 421,N75, , 100, 150, 151, 152, 500, 501, 502, 504, 506, 507, 605, 742, 750A, 750B, 752, N15
-</div>
+        <div class="directions-text">① 마을버스 - 용산03 (전쟁기념관 하차)</div>
+        <div class="directions-text">② 간선버스(전쟁기념관 하차) - 110A, 110B, 421, 740, N72, N75</div>
+        <div class="directions-text">③ 삼각지역 하차 - 421, N75, 100, 150, 151, 152, 500, 501, 502, 504, 506, 507, 605, 742, 750A, 750B, 752, N15</div>
       </div>
 
       <div class="directions-item">
         <div class="directions-label">지하철 이용시</div>
         <div class="directions-text">6호선 삼각지역 12번 출구 (도보 3분)</div>
-        <div class="directions-text">4호선  삼각지역 1번 출구 (도보 5분)</div>
-        <div class="directions-text">1호선  남영역 1번 출구 (도보 7분)</div>
+        <div class="directions-text">4호선 삼각지역 1번 출구 (도보 5분)</div>
+        <div class="directions-text">1호선 남영역 1번 출구 (도보 7분)</div>
       </div>
       <div class="directions-item">
         <div class="directions-label">자가용 이용시</div>
@@ -980,63 +775,53 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- GALLERY (index_2.html의 8장 사진 구성 유지) -->
   <section class="reveal gallery-section">
     <div class="section-eyebrow">Gallery</div>
     <div class="section-title">우리의 장면들</div>
     <div class="gallery-frame">
       <div class="gallery-grid" id="galleryGrid">
-
-   
-             <div class="gallery-item" data-state="bw">
-          <div class="gallery-media">
-       <img src="https://lh3.googleusercontent.com/d/1_-B77sadF3PmGKt5Vo0MVXOKSu6AqxB9" alt="">
-          </div>
-        </div>
-
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-           <img src="https://lh3.googleusercontent.com/d/1SkSC-QYB4I0PRqwT6j2Ydif8ePULm5n_" alt="">
+            <img src="https://lh3.googleusercontent.com/d/1_-B77sadF3PmGKt5Vo0MVXOKSu6AqxB9" alt="">
           </div>
         </div>
-
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-           <img src="https://lh3.googleusercontent.com/d/1EnI-TxIegPfVMXoG8PImfGFCNKgyydo8" alt="">
+            <img src="https://lh3.googleusercontent.com/d/1SkSC-QYB4I0PRqwT6j2Ydif8ePULm5n_" alt="">
           </div>
         </div>
-
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-         <img src="https://lh3.googleusercontent.com/d/1KUxqnIsfIXTW-QeB4EXEg1itb7oRVlns" alt="">
+            <img src="https://lh3.googleusercontent.com/d/1EnI-TxIegPfVMXoG8PImfGFCNKgyydo8" alt="">
           </div>
         </div>
-
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-       <img src="https://lh3.googleusercontent.com/d/1MGKKgTPQk5lVayLVW_x6nUcoTqaaOy3l" alt="">
+            <img src="https://lh3.googleusercontent.com/d/1KUxqnIsfIXTW-QeB4EXEg1itb7oRVlns" alt="">
           </div>
         </div>
-
-          <div class="gallery-item" data-state="bw">
-          <div class="gallery-media">
-        <img src="https://lh3.googleusercontent.com/d/1PwRc7uSyHOw5lYrduToMagPh-7W7WAoF" alt="">
-          </div>
-        </div>
-
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-           <img src="https://lh3.googleusercontent.com/d/1h7KfsR-pXyb5Kz9yFszbWi72bDATihi-" alt="">
+            <img src="https://lh3.googleusercontent.com/d/1MGKKgTPQk5lVayLVW_x6nUcoTqaaOy3l" alt="">
           </div>
         </div>
-
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-           <img src="https://lh3.googleusercontent.com/d/1vR1IkM_p6P4us40n6DQeBsHA50F3UZSj" alt="">
+            <img src="https://lh3.googleusercontent.com/d/1PwRc7uSyHOw5lYrduToMagPh-7W7WAoF" alt="">
           </div>
         </div>
-
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+            <img src="https://lh3.googleusercontent.com/d/1h7KfsR-pXyb5Kz9yFszbWi72bDATihi-" alt="">
           </div>
+        </div>
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+            <img src="https://lh3.googleusercontent.com/d/1vR1IkM_p6P4us40n6DQeBsHA50F3UZSj" alt="">
+          </div>
+        </div>
+      </div>
     </div>
     <div class="gallery-hint">사진을 누르면 크게 볼 수 있어요</div>
   </section>
@@ -1061,9 +846,8 @@
       </button>
       <div class="acc-body" id="acc-groom">
         <div class="acc-body-inner">
-          전승훈<br>
-          은행 · 계좌번호를 입력해 주세요
-          <div class="acc-note">핸드폰 번호 </div>
+          전승훈 (국민은행) 457001-01-422723
+          <div class="acc-note">010-2976-7810</div>
         </div>
       </div>
     </div>
@@ -1074,41 +858,26 @@
       </button>
       <div class="acc-body" id="acc-bride">
         <div class="acc-body-inner">
-          심유진<br>
-          은행 · 계좌번호를 입력해 주세요
-          <div class="acc-note">핸드폰 번호 </div>
+          심유진 (우리은행) 1002-459-614458
+          <div class="acc-note">010-4454-6219</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RSVP -->
-  <section class="reveal">
+  <!-- RSVP (구글 폼 링크 버튼) -->
+  <section class="reveal rsvp-section">
     <div class="section-eyebrow">R / S / V / P</div>
-    <div class="section-title">참석 여부</div>
+    <div class="section-title">참석 여부 전달</div>
     <p>
-      특별한 날을 축하하는 마음으로<br>
-      참석해 주시는 모든 분들을 정성껏 모실 수 있도록<br>
-      아래 버튼을 눌러 참석 여부를 전달해 주세요.
+      원활한 예식 준비와 소중한 식사 대접을 위해<br>
+      참석 여부를 미리 알려주시면 감사하겠습니다.
     </p>
-    <div class="rsvp-form">
-      <div class="rsvp-field">
-        <label for="rsvpName">성함</label>
-        <input type="text" id="rsvpName" placeholder="이름을 입력해 주세요">
-      </div>
-      <div class="rsvp-field">
-        <label>참석 여부</label>
-        <div class="rsvp-toggle">
-          <button type="button" id="rsvpAttendBtn" data-value="참석">참석합니다</button>
-          <button type="button" id="rsvpAbsentBtn" data-value="불참">불참합니다</button>
-        </div>
-      </div>
-      <div class="rsvp-field">
-        <label for="rsvpCount">참석 인원</label>
-        <input type="number" id="rsvpCount" min="1" value="1">
-      </div>
-      <button type="button" class="rsvp-submit" id="rsvpSubmit">전달하기</button>
-      <div class="rsvp-success" id="rsvpSuccess">전달됐어요. 참석해 주셔서 감사합니다 :)</div>
+    <div class="rsvp-btn-wrap">
+      <!-- 복사하신 구글 폼 링크(URL)를 아래 href 따옴표 안에 넣어주세요 -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScFG_2POEKrUQUx3JFgwqe9qiV-Ke2lX2hfB06Z2JkmdbOAFQ/viewform?usp=dialog" target="_blank" rel="noopener" class="rsvp-google-btn">
+        참석 여부 전달하기
+      </a>
     </div>
   </section>
 
@@ -1122,7 +891,7 @@
 </div>
 
 <script>
-  // ---------- 사진 위에 흩날리는 동그라미 효과 ----------
+  // ---------- 꽃잎 효과 ----------
   (function(){
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(reduce) return;
@@ -1160,7 +929,7 @@
     }
   })();
 
-  // ---------- Calendar for Jan 2027 (Jan 1 2027 = Friday) ----------
+  // ---------- 달력 생성 ----------
   (function(){
     var grid = document.getElementById('calGrid');
     var dows = ['일','월','화','수','목','금','토'];
@@ -1170,7 +939,7 @@
       el.textContent = d;
       grid.appendChild(el);
     });
-    var firstDowIndex = 5; // Jan 1, 2027 is Friday -> index 5 (0=Sun)
+    var firstDowIndex = 5; // 2027년 1월 1일은 금요일 (0=일)
     var daysInMonth = 31;
     var weddingDay = 30;
     for(var b=0; b<firstDowIndex; b++){
@@ -1192,7 +961,7 @@
     }
   })();
 
-  // ---------- Gallery: 흑백 → 클릭 시 컬러 → 한번 더 클릭 시 라이트박스 ----------
+  // ---------- 갤러리 및 라이트박스 (클릭 시 바로 라이트박스 오픈) ----------
   (function(){
     var items = document.querySelectorAll('.gallery-item');
     var lightbox = document.getElementById('lightbox');
@@ -1239,7 +1008,6 @@
       if(e.target === lightbox) closeLightbox();
     });
 
-    // 좌우 스와이프로도 다음/이전 사진 이동
     var touchStartX = null;
     lightbox.addEventListener('touchstart', function(e){
       touchStartX = e.touches[0].clientX;
@@ -1253,22 +1021,20 @@
       touchStartX = null;
     });
 
-    // 라이트박스 안에서는 핀치/더블탭 줌 동작을 막습니다.
     lightbox.addEventListener('gesturestart', function(e){ e.preventDefault(); });
     lightbox.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive:false });
   })();
 
-  // ---------- Map links (네이버 / 카카오 / 티맵) ----------
+  // ---------- 지도 링크 ----------
   (function(){
     var address = '서울 용산구 이태원로 29 로얄파크컨벤션';
     var query = encodeURIComponent(address);
     document.getElementById('naverMapLink').href = 'https://map.naver.com/v5/search/' + query;
     document.getElementById('kakaoMapLink').href = 'https://map.kakao.com/link/search/' + query;
     document.getElementById('tmapLink').href = 'tmap://search?name=' + query;
-    // 티맵은 앱이 설치된 기기에서만 바로 열립니다.
   })();
 
-  // ---------- Accordion ----------
+  // ---------- 아코디언 ----------
   document.querySelectorAll('.acc-head').forEach(function(btn){
     btn.addEventListener('click', function(){
       var expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -1278,51 +1044,7 @@
     });
   });
 
-  // ---------- RSVP ----------
-  (function(){
-    // 참석 여부 알림을 받을 이메일 주소
-    var coupleEmail = 'tla6219@naver.com';
-
-    var attendBtn = document.getElementById('rsvpAttendBtn');
-    var absentBtn = document.getElementById('rsvpAbsentBtn');
-    var status = '참석';
-
-    function setStatus(value){
-      status = value;
-      attendBtn.classList.toggle('active', value === '참석');
-      absentBtn.classList.toggle('active', value === '불참');
-      var countInput = document.getElementById('rsvpCount');
-      if(value === '불참'){
-        countInput.value = 0;
-        countInput.disabled = true;
-      } else {
-        countInput.disabled = false;
-        if(Number(countInput.value) === 0) countInput.value = 1;
-      }
-    }
-    attendBtn.addEventListener('click', function(){ setStatus('참석'); });
-    absentBtn.addEventListener('click', function(){ setStatus('불참'); });
-    setStatus('참석');
-
-    document.getElementById('rsvpSubmit').addEventListener('click', function(){
-      var name = document.getElementById('rsvpName').value.trim();
-      var count = document.getElementById('rsvpCount').value;
-      if(!name){
-        document.getElementById('rsvpName').focus();
-        return;
-      }
-      var subject = '[모바일 청첩장] ' + name + '님 ' + status + ' 전달';
-      var body = '성함: ' + name + '\n참석 여부: ' + status +
-        (status === '참석' ? ('\n참석 인원: ' + count + '명') : '');
-      var mailLink = 'mailto:' + coupleEmail +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-      window.location.href = mailLink;
-      document.getElementById('rsvpSuccess').classList.add('show');
-    });
-  })();
-
-  // ---------- Scroll reveal (드래그/스크롤 시 콘텐츠 나타나는 효과) ----------
+  // ---------- 스크롤 페이드 효과 ----------
   (function(){
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var targets = document.querySelectorAll('.reveal');
