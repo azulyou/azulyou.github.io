@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <title>전승훈 · 심유진 결혼식에 초대합니다</title>
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="전승훈 · 심유진 결혼합니다">
 <meta property="og:description" content="2027년 1월 30일 토요일 낮 12시 30분 · 로얄파크컨벤션 로얄홀">
-<meta property="og:image" content="https://lh3.googleusercontent.com/d/1uSuWrufZO2v38VI16A6TBPRrnEKxedQU">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1JIe79rahnYydrOv-A_Sg2zkQBOumF4x2">
 <meta property="og:url" content="https://azulyou.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -49,7 +50,7 @@
     *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
   }
 
-  /* ---------- HERO ---------- */
+   /* ---------- HERO ---------- */
   .hero{
     position:relative;
     padding: 64px 0 0;
@@ -314,6 +315,67 @@
   .cal-grid .sat{ color:#3A382F; }
   .cal-grid .sun{ color:#B5AA8F; }
 
+
+ /* ---------- D-DAY / CALENDAR ---------- */
+  .dday-badge{
+    display:inline-block;
+    padding:10px 26px;
+    border-radius:999px;
+    background: linear-gradient(135deg, var(--lav-pale), var(--blush));
+    color:var(--plum);
+    font-family:'Noto Serif KR', serif;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:0.03em;
+    margin-bottom:32px;
+  }
+  .dday-badge b{ color:var(--lav-deep); font-size:16px; }
+
+  .cal{
+    background: var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:24px 18px 18px;
+  }
+  .cal-head{
+    font-family:'Noto Serif KR', serif;
+    font-size:18px;
+    letter-spacing:0.08em;
+    color:var(--plum);
+    margin-bottom:16px;
+  }
+  .cal-grid{
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap:12px;
+    font-size:12px;
+  }
+  .cal-grid .dow{
+    color: var(--lav-deep);
+    font-weight:500;
+    padding-bottom:6px;
+  }
+  .cal-grid .day{
+    color: var(--plum-soft);
+    font-weight:300;
+  }
+  .cal-grid .day.blank{ visibility:hidden; }
+  .cal-grid .day.today{
+    position:relative;
+    color:#fff;
+    font-weight:600;
+  }
+  .cal-grid .day.today span{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:26px; height:26px;
+    border-radius:50%;
+    background: var(--lav-deep);
+  }
+  .cal-grid .sat{ color:#3A382F; }
+  .cal-grid .sun{ color:#B5AA8F; }
+
   /* ---------- DETAIL CARD ---------- */
   .detail-card{
     background: var(--lav-pale);
@@ -412,7 +474,7 @@
     text-align:center;
   }
 
-  /* ---------- GALLERY ---------- */
+   /* ---------- GALLERY (흑백 → 클릭 시 컬러 → 한번 더 클릭 시 라이트박스) ---------- */
   .gallery-section{
     background: var(--lav-deep);
     padding: 60px 24px 64px;
@@ -425,8 +487,8 @@
   }
   .gallery-grid{
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:8px;
+    grid-template-columns: repeat(3, 1fr);
+    gap:6px;
   }
   .gallery-item{
     position:relative;
@@ -442,6 +504,21 @@
     object-fit:cover;
     display:block;
   }
+  .gallery-placeholder-fill{
+    position:absolute; inset:0;
+    background: linear-gradient(150deg, var(--lav-pale), var(--blush));
+  }
+  .gallery-placeholder-text{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Serif KR', serif;
+    font-size:12px;
+    letter-spacing:0.04em;
+    color: var(--plum-soft);
+    opacity:0.55;
+    text-align:center;
+    padding:8px;
+  }
   .gallery-hint{
     margin-top:16px;
     font-size:11.5px;
@@ -451,7 +528,7 @@
     letter-spacing:0.02em;
   }
 
-  /* ---------- LIGHTBOX ---------- */
+  /* ---------- LIGHTBOX (줌 불가) ---------- */
   .lightbox{
     position:fixed;
     inset:0;
@@ -513,8 +590,24 @@
     font-size:13px;
     letter-spacing:0.1em;
   }
+  .gallery-note{
+    margin-top:18px;
+    font-size:12.5px;
+    color:var(--plum-soft);
+    font-weight:300;
+    line-height:1.7;
+  }
 
   /* ---------- ACCOUNT ACCORDION ---------- */
+  /* 계좌번호/전화번호 자동 링크(파란 밑줄) 제거 */
+  .acc-body a,
+  a[x-apple-data-detectors]{
+    color: inherit !important;
+    text-decoration: none !important;
+    font: inherit !important;
+    pointer-events: none;
+  }
+  .acc-body-inner{ -webkit-touch-callout: none; }
   .accordion{
     background: var(--card);
     border:1px solid var(--line);
@@ -564,7 +657,75 @@
     color: var(--lav-deep);
   }
 
-  /* ---------- RSVP (구글 폼 링크 버튼) ---------- */
+
+  /* ---------- ACCOUNT POPUP ---------- */
+  .acc-open{
+    width:100%;
+    padding:18px 20px;
+    background: var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:'Noto Serif KR', sans-serif;
+    font-size:14px; font-weight:500;
+    color:var(--plum);
+    cursor:pointer;
+  }
+  .acc-open + .acc-open{ margin-top:10px; }
+  .acc-open .chev{ color: var(--lav-deep); }
+  .acc-modal{
+    position:fixed; inset:0;
+    z-index:2000;
+    display:none;
+    align-items:center; justify-content:center;
+    padding:24px;
+    background: rgba(0,0,0,0.5);
+  }
+  .acc-modal.is-open{ display:flex; }
+  .acc-modal-box{
+    width:100%; max-width:380px;
+    max-height:86vh; overflow-y:auto;
+    background:#fff;
+    padding:30px 26px 26px;
+    text-align:left;
+    box-shadow:0 10px 40px rgba(0,0,0,0.25);
+  }
+  .acc-sec + .acc-sec{ margin-top:26px; }
+  .acc-sec-title{
+    font-size:16px; font-weight:700;
+    color: var(--plum);
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:14px;
+  }
+  .acc-bank{ font-size:14px; color: var(--plum-soft); line-height:1.7; }
+  .acc-num{
+    font-size:16px; color: var(--plum);
+    line-height:1.7; letter-spacing:0.01em;
+    word-break:break-all;
+  }
+  .acc-copy{
+    margin-top:12px;
+    padding:11px 0;
+    width:100%; max-width:220px;
+    border:none; border-radius:999px;
+    background:#333; color:#fff;
+    font-size:13px; font-weight:500;
+    cursor:pointer;
+  }
+  .acc-copy.done{ background: var(--lav-mid); }
+  .acc-close{
+    margin-top:28px;
+    width:100%;
+    padding:14px 0;
+    background:#fff;
+    border:1px solid var(--plum);
+    color: var(--plum);
+    font-size:14px; font-weight:600;
+    cursor:pointer;
+  }
+
+ /* ---------- RSVP (구글 폼 링크 버튼) ---------- */
   .rsvp-section p{
     font-size:14.5px;
     line-height:2.0;
@@ -594,6 +755,7 @@
     background: var(--plum);
     transform: scale(0.98);
   }
+
 
   /* ---------- FOOTER ---------- */
   footer{
@@ -637,7 +799,7 @@
 <body>
 <div class="frame" id="frame">
 
-  <!-- HERO -->
+<!-- HERO -->
   <div class="hero" id="hero">
     <div class="hero-nameline">
       <span class="hero-name">전 승 훈</span>
@@ -649,7 +811,7 @@
       <span class="hero-name">심 유 진</span>
     </div>
     <div class="hero-photo">
-      <img src="https://lh3.googleusercontent.com/d/1d5DylpPmC5-w95azOtvZGwAfh3JrWzEy" alt="전승훈 · 심유진">
+    <img src="https://lh3.googleusercontent.com/d/1d5DylpPmC5-w95azOtvZGwAfh3JrWzEy" alt="전승훈 · 심유진">
     </div>
     <div class="hero-bottom">
       <p>2027년 1월 30일 토요일 오후 12시 30분</p>
@@ -682,7 +844,7 @@
         <div class="casting-tape">Groom</div>
         <div class="casting-photo-bg">
           <div class="heart-mask">
-            <img src="https://lh3.googleusercontent.com/d/16bhLlA7AlMXXHvVyGDk-qMWX8vMedUCc" alt="신랑">
+<img src="https://lh3.googleusercontent.com/d/16bhLlA7AlMXXHvVyGDk-qMWX8vMedUCc" alt="신랑">
           </div>
         </div>
         <p class="casting-name"><b>신랑</b>전승훈</p>
@@ -691,7 +853,7 @@
         <div class="casting-tape">Bride</div>
         <div class="casting-photo-bg">
           <div class="heart-mask">
-            <img src="https://lh3.googleusercontent.com/d/18lvwvaYGAiBG0wJH4LI0yFghTi_rkzVB" alt="신부">
+<img src="https://lh3.googleusercontent.com/d/18lvwvaYGAiBG0wJH4LI0yFghTi_rkzVB">
           </div>
         </div>
         <p class="casting-name"><b>신부</b>심유진</p>
@@ -732,6 +894,7 @@
           <div class="detail-label">Venue</div>
           <div class="detail-value">로얄파크컨벤션 로얄홀<br>서울 용산구 이태원로 29</div>
         </div>
+
       </div>
       <div class="map-app-row">
         <a class="map-app-btn" id="naverMapLink" href="#" target="_blank" rel="noopener">
@@ -757,16 +920,17 @@
     <div class="directions-list">
       <div class="directions-item">
         <div class="directions-label">버스 이용시</div>
-        <div class="directions-text">① 마을버스 - 용산03 (전쟁기념관 하차)</div>
-        <div class="directions-text">② 간선버스(전쟁기념관 하차) - 110A, 110B, 421, 740, N72, N75</div>
-        <div class="directions-text">③ 삼각지역 하차 - 421, N75, 100, 150, 151, 152, 500, 501, 502, 504, 506, 507, 605, 742, 750A, 750B, 752, N15</div>
+        <div class="directions-text">① 마을버스 - 용산03 (전쟁기념관 하차) </div>
+        <div class="directions-text">② 간선버스(전쟁기념관 하차) - 110A, 110B, 421, 740, N72. N75</div>
+        <div class="directions-text">③ 삼각지역 하차 - 421,N75, , 100, 150, 151, 152, 500, 501, 502, 504, 506, 507, 605, 742, 750A, 750B, 752, N15
+</div>
       </div>
 
       <div class="directions-item">
         <div class="directions-label">지하철 이용시</div>
         <div class="directions-text">6호선 삼각지역 12번 출구 (도보 3분)</div>
-        <div class="directions-text">4호선 삼각지역 1번 출구 (도보 5분)</div>
-        <div class="directions-text">1호선 남영역 1번 출구 (도보 7분)</div>
+        <div class="directions-text">4호선  삼각지역 1번 출구 (도보 5분)</div>
+        <div class="directions-text">1호선  남영역 1번 출구 (도보 7분)</div>
       </div>
       <div class="directions-item">
         <div class="directions-label">자가용 이용시</div>
@@ -775,50 +939,70 @@
     </div>
   </section>
 
-  <!-- GALLERY (index_2.html의 8장 사진 구성 유지) -->
+  <!-- GALLERY -->
   <section class="reveal gallery-section">
     <div class="section-eyebrow">Gallery</div>
     <div class="section-title">우리의 장면들</div>
     <div class="gallery-frame">
       <div class="gallery-grid" id="galleryGrid">
-        <div class="gallery-item" data-state="bw">
+             <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-            <img src="https://lh3.googleusercontent.com/d/1_-B77sadF3PmGKt5Vo0MVXOKSu6AqxB9" alt="">
+<img src="https://lh3.googleusercontent.com/d/1KUxqnIsfIXTW-QeB4EXEg1itb7oRVlns" alt="">
           </div>
         </div>
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-            <img src="https://lh3.googleusercontent.com/d/1SkSC-QYB4I0PRqwT6j2Ydif8ePULm5n_" alt="">
+<img src="https://lh3.googleusercontent.com/d/1EnI-TxIegPfVMXoG8PImfGFCNKgyydo8" alt="">
           </div>
         </div>
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-            <img src="https://lh3.googleusercontent.com/d/1EnI-TxIegPfVMXoG8PImfGFCNKgyydo8" alt="">
+<img src="https://lh3.googleusercontent.com/d/1jxMWTsHpY7ic34Ts0rRBlTRcBJZTv1qo" alt="">
           </div>
         </div>
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-            <img src="https://lh3.googleusercontent.com/d/1KUxqnIsfIXTW-QeB4EXEg1itb7oRVlns" alt="">
+ <img src="https://lh3.googleusercontent.com/d/1jgmWmoZwAwJjLHfHSkC_MuDgoLIIFqCb" alt="">
           </div>
         </div>
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-            <img src="https://lh3.googleusercontent.com/d/1MGKKgTPQk5lVayLVW_x6nUcoTqaaOy3l" alt="">
+<img src="https://lh3.googleusercontent.com/d/1h7KfsR-pXyb5Kz9yFszbWi72bDATihi-" alt="">
+          </div>
+        </div>
+          <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+<img src="https://lh3.googleusercontent.com/d/1PwRc7uSyHOw5lYrduToMagPh-7W7WAoF" alt="">
           </div>
         </div>
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-            <img src="https://lh3.googleusercontent.com/d/1PwRc7uSyHOw5lYrduToMagPh-7W7WAoF" alt="">
+<img src="https://lh3.googleusercontent.com/d/1y5eYmkRdXYnyoOXjiQY2TgFIO5Kuw41n" alt="">
           </div>
         </div>
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-            <img src="https://lh3.googleusercontent.com/d/1h7KfsR-pXyb5Kz9yFszbWi72bDATihi-" alt="">
+<img src="https://lh3.googleusercontent.com/d/1vR1IkM_p6P4us40n6DQeBsHA50F3UZSj" alt="">
           </div>
         </div>
         <div class="gallery-item" data-state="bw">
           <div class="gallery-media">
-            <img src="https://lh3.googleusercontent.com/d/1vR1IkM_p6P4us40n6DQeBsHA50F3UZSj" alt="">
+<img src="https://lh3.googleusercontent.com/d/1537HgmH0SKL13CUQuCYauqAVDQfYKGn0" alt="">
+          </div>
+        </div>
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+<img src="https://lh3.googleusercontent.com/d/16NRAzLYYO2VJAGyeItejGBoH8fQh1gJp" alt="">
+          </div>
+        </div>
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+<img src="https://lh3.googleusercontent.com/d/1_-B77sadF3PmGKt5Vo0MVXOKSu6AqxB9" alt="">
+          </div>
+        </div>
+        <div class="gallery-item" data-state="bw">
+          <div class="gallery-media">
+<img src="https://lh3.googleusercontent.com/d/1x19l9Dudt5g5s7W9Jgp6cQD3TI0PSuuG" alt="">
           </div>
         </div>
       </div>
@@ -839,33 +1023,46 @@
   <section class="reveal">
     <div class="section-eyebrow">Gift</div>
     <div class="section-title">마음 전하실 곳</div>
-    <div class="accordion">
-      <button class="acc-head" aria-expanded="false" data-target="acc-groom">
-        <span>신랑측</span>
-        <span class="chev">⌄</span>
-      </button>
-      <div class="acc-body" id="acc-groom">
-        <div class="acc-body-inner">
-          전승훈 (국민은행) 
-          <div class="acc-note">457001-01-422723</div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <button class="acc-head" aria-expanded="false" data-target="acc-bride">
-        <span>신부측</span>
-        <span class="chev">⌄</span>
-      </button>
-      <div class="acc-body" id="acc-bride">
-        <div class="acc-body-inner">
-          심유진 (우리은행) 
-          <div class="acc-note">1002-459-614458</div>
-        </div>
-      </div>
-    </div>
+    <button type="button" class="acc-open" data-modal="accModalGroom">
+      <span>신랑측</span><span class="chev">›</span>
+    </button>
+    <button type="button" class="acc-open" data-modal="accModalBride">
+      <span>신부측</span><span class="chev">›</span>
+    </button>
   </section>
 
-  <!-- RSVP (구글 폼 링크 버튼) -->
+  <!-- ACCOUNT POPUP -->
+  <div class="acc-modal" id="accModalGroom" aria-hidden="true">
+    <div class="acc-modal-box" role="dialog" aria-modal="true">
+        <div class="acc-sec">
+          <div class="acc-sec-title">신랑 계좌</div>
+          <div class="acc-bank">국민은행 (예금주 : 전승훈)</div>
+          <div class="acc-num">457001-01-422723</div>
+          <button type="button" class="acc-copy">계좌번호 복사</button>
+        </div>
+        <div class="acc-sec">
+          <div class="acc-sec-title">신랑 혼주 계좌</div>
+          <div class="acc-bank">농협은행 (예금주 : 전현구)</div>
+          <div class="acc-num">351-1279-3327-73</div>
+          <button type="button" class="acc-copy">계좌번호 복사</button>
+        </div>
+        <button type="button" class="acc-close">닫기</button>
+    </div>
+  </div>
+
+  <div class="acc-modal" id="accModalBride" aria-hidden="true">
+    <div class="acc-modal-box" role="dialog" aria-modal="true">
+        <div class="acc-sec">
+          <div class="acc-sec-title">신부 계좌</div>
+          <div class="acc-bank">우리은행 (예금주 : 심유진)</div>
+          <div class="acc-num">1002-459-614458</div>
+          <button type="button" class="acc-copy">계좌번호 복사</button>
+        </div>
+        <button type="button" class="acc-close">닫기</button>
+    </div>
+  </div>
+
+ <!-- RSVP (구글 폼 링크 버튼) -->
   <section class="reveal rsvp-section">
     <div class="section-eyebrow">R / S / V / P</div>
     <div class="section-title">참석 여부 전달</div>
@@ -891,7 +1088,7 @@
 </div>
 
 <script>
-  // ---------- 꽃잎 효과 ----------
+  // ---------- 사진 위에 흩날리는 동그라미 효과 ----------
   (function(){
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(reduce) return;
@@ -929,7 +1126,7 @@
     }
   })();
 
-  // ---------- 달력 생성 ----------
+  // ---------- Calendar for Jan 2027 (Jan 1 2027 = Friday) ----------
   (function(){
     var grid = document.getElementById('calGrid');
     var dows = ['일','월','화','수','목','금','토'];
@@ -939,7 +1136,7 @@
       el.textContent = d;
       grid.appendChild(el);
     });
-    var firstDowIndex = 5; // 2027년 1월 1일은 금요일 (0=일)
+    var firstDowIndex = 5; // Jan 1, 2027 is Friday -> index 5 (0=Sun)
     var daysInMonth = 31;
     var weddingDay = 30;
     for(var b=0; b<firstDowIndex; b++){
@@ -961,7 +1158,7 @@
     }
   })();
 
-  // ---------- 갤러리 및 라이트박스 (클릭 시 바로 라이트박스 오픈) ----------
+  // ---------- Gallery: 흑백 → 클릭 시 컬러 → 한번 더 클릭 시 라이트박스 ----------
   (function(){
     var items = document.querySelectorAll('.gallery-item');
     var lightbox = document.getElementById('lightbox');
@@ -1008,6 +1205,7 @@
       if(e.target === lightbox) closeLightbox();
     });
 
+    // 좌우 스와이프로도 다음/이전 사진 이동
     var touchStartX = null;
     lightbox.addEventListener('touchstart', function(e){
       touchStartX = e.touches[0].clientX;
@@ -1021,30 +1219,73 @@
       touchStartX = null;
     });
 
+    // 라이트박스 안에서는 핀치/더블탭 줌 동작을 막습니다.
     lightbox.addEventListener('gesturestart', function(e){ e.preventDefault(); });
     lightbox.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive:false });
   })();
 
-  // ---------- 지도 링크 ----------
+  // ---------- Map links (네이버 / 카카오 / 티맵) ----------
   (function(){
     var address = '서울 용산구 이태원로 29 로얄파크컨벤션';
     var query = encodeURIComponent(address);
     document.getElementById('naverMapLink').href = 'https://map.naver.com/v5/search/' + query;
     document.getElementById('kakaoMapLink').href = 'https://map.kakao.com/link/search/' + query;
     document.getElementById('tmapLink').href = 'tmap://search?name=' + query;
+    // 티맵은 앱이 설치된 기기에서만 바로 열립니다.
   })();
 
-  // ---------- 아코디언 ----------
-  document.querySelectorAll('.acc-head').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      var body = document.getElementById(btn.getAttribute('data-target'));
-      btn.setAttribute('aria-expanded', String(!expanded));
-      body.style.maxHeight = expanded ? '0px' : body.scrollHeight + 'px';
-    });
-  });
+  // ---------- 계좌번호 팝업 ----------
+  (function(){
+    var openBtns = document.querySelectorAll('.acc-open');
+    var modals = document.querySelectorAll('.acc-modal');
 
-  // ---------- 스크롤 페이드 효과 ----------
+    function openModal(id){
+      var m = document.getElementById(id);
+      m.classList.add('is-open');
+      m.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeAll(){
+      modals.forEach(function(m){
+        m.classList.remove('is-open');
+        m.setAttribute('aria-hidden','true');
+      });
+      document.body.style.overflow = '';
+    }
+    openBtns.forEach(function(b){
+      b.addEventListener('click', function(){ openModal(b.getAttribute('data-modal')); });
+    });
+    modals.forEach(function(m){
+      m.addEventListener('click', function(e){ if(e.target === m) closeAll(); });
+      m.querySelector('.acc-close').addEventListener('click', closeAll);
+    });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(); });
+
+    function copyText(text, done){
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
+      } else { fallback(text, done); }
+    }
+    function fallback(text, done){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(ta); done();
+    }
+    document.querySelectorAll('.acc-copy').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var num = btn.parentNode.querySelector('.acc-num').textContent.trim();
+        copyText(num, function(){
+          btn.textContent = '복사되었습니다';
+          btn.classList.add('done');
+          setTimeout(function(){ btn.textContent = '계좌번호 복사'; btn.classList.remove('done'); }, 1500);
+        });
+      });
+    });
+  })();
+
+   // ---------- Scroll reveal (드래그/스크롤 시 콘텐츠 나타나는 효과) ----------
   (function(){
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var targets = document.querySelectorAll('.reveal');
